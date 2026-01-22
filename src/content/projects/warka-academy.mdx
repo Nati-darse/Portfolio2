@@ -1,0 +1,39 @@
+---
+title: "Warka Academy"
+description: "LMS platform for specialized technical education in East Africa."
+date: "2025-02-10"
+techStack: ["Next.js", "Supabase", "TypeScript", "Tailwind"]
+metrics: [
+  { label: "Courses", value: "50+" },
+  { label: "Students", value: "2k+" }
+]
+category: "Education"
+---
+
+# Warka Academy: Impactful Technical Education
+
+## Situation
+Technical education in specialized fields was often inaccessible due to high costs or lack of specialized regional platforms. There was a demand for a high-performance Learning Management System (LMS) tailored to local needs.
+
+## Task
+Develop a modern, accessible LMS that offered a premium learning experience, including progress tracking, interactive quizzes, and seamless video streaming for students across varied connectivity environments.
+
+## Action
+Using **Next.js** and **Supabase**, I implemented:
+- **Server-Side Rendering (SSR)**: Leveraged SSR for course pages to ensure fast initial loads and SEO optimization.
+- **Supabase Auth & Realtime**: Integrated secure authentication and real-time progress syncing across devices.
+- **Adaptive Video UI**: Built a custom video player that handled varying connection speeds gracefully to minimize buffering for students.
+
+## Result
+Since launch, over **2,000 students** have enrolled in **50+ specialized courses**. The platform maintains high engagement rates due to its performance-first design and intuitive learning paths.
+
+```typescript
+// Progress Tracking Sync
+async function syncProgress(userId: string, lessonId: string) {
+  const { error } = await supabase
+    .from('student_progress')
+    .upsert({ user_id: userId, lesson_id: lessonId, completed: true });
+  
+  if (error) throw new Error('Failed to sync progress');
+}
+```

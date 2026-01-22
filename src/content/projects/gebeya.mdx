@@ -1,0 +1,38 @@
+---
+title: "Gebeya"
+description: "Multi-vendor e-commerce marketplace with advanced filtering and vendor dashboards."
+date: "2024-11-20"
+techStack: ["React", "Express", "MongoDB", "Node.js", "Redux"]
+metrics: [
+  { label: "Vendors", value: "500+" },
+  { label: "Users", value: "25k+" }
+]
+category: "Full-Stack"
+---
+
+# Gebeya: Orchestrating a Digital Marketplace
+
+## Situation
+Local merchants lacked a centralized platform to reach a wider audience, while consumers struggled with fragmented e-commerce options. There was a need for a robust, multi-vendor system that could manage diverse inventory and complex order flows.
+
+## Task
+The goal was to architect a full-stack marketplace that provided unified search and discovery for users, while giving vendors a powerful administrative suite to manage products, sales, and analytics.
+
+## Action
+I developed the system using the **MERN** stack. Key contributions included:
+- **Unified Schema Design**: Designed a flexible MongoDB schema to handle varied product types from different categories.
+- **Vendor Dashboard**: Built a comprehensive React-based admin panel for vendors with real-time sales charts and inventory management.
+- **Advanced Filtering**: Implemented an efficient server-side filtering and pagination system to handle thousands of items with low latency.
+
+## Result
+The platform scaled to support over **500 vendors** and served **25,000+ active users**. It became a key player in the local digital commerce space, facilitating thousands of transactions monthly with a focus on ease-of-use for non-technical merchants.
+
+```javascript
+// Vendor Sales Analytics Aggregation
+const getVendorStats = async (vendorId) => {
+  return await Order.aggregate([
+    { $match: { "items.vendor": vendorId } },
+    { $group: { _id: null, totalSales: { $sum: "$totalAmount" } } }
+  ]);
+}
+```

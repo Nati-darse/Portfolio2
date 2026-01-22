@@ -1,0 +1,40 @@
+---
+title: "Event Easy"
+description: "A comprehensive event management platform with real-time ticketing and analytics."
+date: "2025-06-15"
+techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"]
+metrics: [
+  { label: "Lighthouse", value: "98/100" },
+  { label: "Tickets Sold", value: "10k+" }
+]
+category: "Event Management"
+---
+
+# Event Easy: Real-time Ticketing Ecosystem
+
+## Situation
+In a rapidly growing digital economy, event organizers in East Africa faced significant challenges with manual ticketing, fraud, and lack of real-time attendee data. Existing solutions were either too expensive or lacked the local payment integrations needed.
+
+## Task
+The objective was to build a secure, scalable, and intuitive platform that could handle thousands of concurrent transactions during high-demand event launches while providing organizers with a "command center" for their data.
+
+## Action
+I engineered the platform using **Next.js 15** and **PostgreSQL**. Key technical implementations included:
+- **Optimistic UI**: Implemented real-time seat selection using WebSockets and optimistic updates to ensure a lag-free experience.
+- **Queue Management**: Developed a custom request queue for ticket purchases to prevent database bottleneck during peak traffic.
+- **Local Integrations**: Built adapters for diverse payment gateways used in the region.
+
+## Result
+The platform successfully processed over **10,000 tickets** in its first month with zero downtime. It achieved a **98/100 Lighthouse performance score** and reduced attendee check-in time by **60%** through QR-code based automated systems.
+
+```tsx
+// Example of the Optimistic Check-in Logic
+const handleCheckIn = async (ticketId: string) => {
+  setCheckins(prev => [...prev, ticketId]); // Optimistic
+  try {
+    await api.checkIn(ticketId);
+  } catch (err) {
+    setCheckins(prev => prev.filter(id => id !== ticketId)); // Rollback
+  }
+}
+```

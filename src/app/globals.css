@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Industrial Emerald & Slate Theme */
+:root {
+  /* Core Palette */
+  --background: #020617;      /* Slate-950: Deep premium near-black */
+  --surface: #0f172a;         /* Slate-900: Card backgrounds */
+  --accent: #10b981;          /* Emerald-500: CTAs, active states */
+  --text-primary: #f8fafc;    /* Slate-50: Headings */
+  --text-secondary: #a1a1aa;  /* Zinc-400: Body text */
+  --border: #27272a;          /* Zinc-800: Subtle dividers */
+  
+  /* Mouse tracking for radial gradient */
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+@theme inline {
+  /* Tailwind Custom Tokens */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  
+  /* Typography */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Custom animations for magnetic effects */
+  --animate-magnetic: magnetic 0.3s ease-out;
+}
+
+/* Tech Background with Circuit Grid & Radial Glow */
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(
+      circle at var(--mouse-x) var(--mouse-y), 
+      rgba(16, 185, 129, 0.08) 0%, 
+      transparent 50%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(16, 185, 129, 0.03) 0px,
+      transparent 1px,
+      transparent 40px,
+      rgba(16, 185, 129, 0.03) 41px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(16, 185, 129, 0.03) 0px,
+      transparent 1px,
+      transparent 40px,
+      rgba(16, 185, 129, 0.03) 41px
+    );
+  background-blend-mode: overlay;
+}
+
+/* Ensure content is above background */
+#__next,
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar (Industrial theme) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection color */
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
