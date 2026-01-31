@@ -38,6 +38,39 @@ export const projects: Project[] = [
         featured: true,
     },
     {
+        id: "mesob-help-desk",
+        title: "Mesob Help Desk",
+        description: "A comprehensive IT support ticket management system built for multi-tenant organizations with multi-role support and real-time features.",
+        category: "Full-Stack",
+        techStack: ["React 19", "Material-UI", "Node.js", "Express", "MongoDB", "Socket.IO"],
+        metrics: [
+            { label: "Architecture", value: "Multi-tenant" },
+            { label: "Resolution", value: "Real-time" },
+        ],
+        links: {
+            github: "https://github.com/Nati-darse/Mesob-help-desk.git",
+            live: "https://mesob-help-desk.vercel.app/",
+        },
+        slug: "mesob-help-desk",
+        featured: true,
+    },
+    {
+        id: "karis-furniture",
+        title: "Karis Furniture",
+        description: "A premium furniture e-commerce platform blending high-end aesthetics with seamless full-stack functionality using Next.js and Supabase.",
+        category: "Full-Stack",
+        techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Framer Motion"],
+        metrics: [
+            { label: "Performance", value: "99/100" },
+            { label: "User Flow", value: "Seamless" },
+        ],
+        links: {
+            live: "https://karis-furniture-beta.vercel.app/",
+        },
+        slug: "karis-furniture",
+        featured: true,
+    },
+    {
         id: "event-easy",
         title: "Event Easy",
         description: "A comprehensive event management platform with real-time ticketing, QR-code check-ins, and data analytics. Built for high-stakes events in the regional market.",
@@ -85,23 +118,6 @@ export const projects: Project[] = [
             live: "https://warka-acadamy.vercel.app/",
         },
         slug: "warka-academy",
-        featured: true,
-    },
-    {
-        id: "mesob-help-desk",
-        title: "Mesob Help Desk",
-        description: "A comprehensive IT support ticket management system built for multi-tenant organizations with multi-role support and real-time features.",
-        category: "Full-Stack",
-        techStack: ["React 19", "Material-UI", "Node.js", "Express", "MongoDB", "Socket.IO"],
-        metrics: [
-            { label: "Architecture", value: "Multi-tenant" },
-            { label: "Resolution", value: "Real-time" },
-        ],
-        links: {
-            github: "https://github.com/Nati-darse/Mesob-help-desk.git",
-            live: "https://mesob-help-desk.vercel.app/",
-        },
-        slug: "mesob-help-desk",
         featured: true,
     },
     {
