@@ -82,10 +82,27 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                                 ))}
                             </div>
 
-                            <div className="mt-12 pt-8 border-t border-slate-800">
-                                <button className="w-full py-4 rounded-xl bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400 transition-colors">
-                                    Source Documents
-                                </button>
+                            <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col gap-3">
+                                {project.meta.links?.live && (
+                                    <a
+                                        href={project.meta.links.live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full py-4 rounded-xl bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400 transition-colors text-center"
+                                    >
+                                        Visit Live Site
+                                    </a>
+                                )}
+                                {project.meta.links?.github && (
+                                    <a
+                                        href={project.meta.links.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full py-4 rounded-xl bg-slate-800 text-slate-200 font-bold hover:bg-slate-700 transition-colors text-center border border-slate-700"
+                                    >
+                                        GitHub Archive
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </aside>
