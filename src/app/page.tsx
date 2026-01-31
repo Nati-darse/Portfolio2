@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { ProjectGrid } from "@/components/sections/ProjectGrid";
+import { TechStack } from "@/components/sections/TechStack";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProjectGrid />
+      <TechStack />
       <Footer />
     </main>
   );
