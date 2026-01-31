@@ -24,7 +24,7 @@ export const projects: Project[] = [
     {
         id: "event-easy",
         title: "Event Easy",
-        description: "A comprehensive event management platform with real-time ticketing and analytics.",
+        description: "A comprehensive event management platform with real-time ticketing, QR-code check-ins, and data analytics. Built for high-stakes events in the regional market.",
         category: "Event Management",
         techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
         metrics: [
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     {
         id: "gebeya",
         title: "Gebeya",
-        description: "Multi-vendor e-commerce marketplace with advanced filtering and vendor dashboards.",
+        description: "Multi-vendor e-commerce marketplace featuring advanced filtering, vendor dashboards, and complex state management. Orchestrating a full digital trade ecosystem.",
         category: "Full-Stack",
         techStack: ["React", "Express", "MongoDB", "Node.js", "Redux"],
         metrics: [
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     {
         id: "warka-academy",
         title: "Warka Academy",
-        description: "LMS platform for specialized technical education in East Africa.",
+        description: "LMS platform for specialized technical education. Impact-driven software focused on performance, accessibility, and empowering the next generation of engineers.",
         category: "Education",
         techStack: ["Next.js", "Supabase", "TypeScript", "Tailwind"],
         metrics: [
