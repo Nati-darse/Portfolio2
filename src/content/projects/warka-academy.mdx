@@ -1,41 +1,56 @@
 ---
 title: "Warka Academy"
-description: "LMS platform for specialized technical education in East Africa."
+description: "A comprehensive school management system designed to streamline administrative and operational processes."
 date: "2025-02-10"
-techStack: ["Next.js", "Supabase", "TypeScript", "Tailwind"]
+techStack: ["MongoDB", "Express", "React", "Node.js", "TypeScript", "Redis", "PWA"]
 metrics: [
-  { label: "Courses", value: "50+" },
-  { label: "Students", value: "2k+" }
+  { label: "Role-Based", value: "RBAC" },
+  { label: "Architecture", value: "Scalable" }
 ]
 category: "Education"
 links:
   live: "https://warka-acadamy.vercel.app/"
 ---
 
-# Warka Academy: Impactful Technical Education
+# Warka Academy: Comprehensive School Management
 
-## Situation
-Technical education in specialized fields was often inaccessible due to high costs or lack of specialized regional platforms. There was a demand for a high-performance Learning Management System (LMS) tailored to local needs.
+A state-of-the-art platform designed to revolutionize school administration. This solution provides an efficient, user-friendly environment for managing students, teachers, and complex institutional workflows.
 
-## Task
-Develop a modern, accessible LMS that offered a premium learning experience, including progress tracking, interactive quizzes, and seamless video streaming for students across varied connectivity environments.
+## Core Features
 
-## Action
-Using **Next.js** and **Supabase**, I implemented:
-- **Server-Side Rendering (SSR)**: Leveraged SSR for course pages to ensure fast initial loads and SEO optimization.
-- **Supabase Auth & Realtime**: Integrated secure authentication and real-time progress syncing across devices.
-- **Adaptive Video UI**: Built a custom video player that handled varying connection speeds gracefully to minimize buffering for students.
+### 📚 Student Information Management
+Centralized storage for personal details, academic records, attendance history, health info, and disciplinary logs.
 
-## Result
-Since launch, over **2,000 students** have enrolled in **50+ specialized courses**. The platform maintains high engagement rates due to its performance-first design and intuitive learning paths.
+### 🎓 Admissions & Enrollment
+Automated application processing, online registration tracking, digital contract signing, and streamlined class assignments.
 
-```typescript
-// Progress Tracking Sync
-async function syncProgress(userId: string, lessonId: string) {
-  const { error } = await supabase
-    .from('student_progress')
-    .upsert({ user_id: userId, lesson_id: lessonId, completed: true });
-  
-  if (error) throw new Error('Failed to sync progress');
-}
-```
+### ⏰ Advanced Attendance
+Real-time monitoring using multiple input methods (Manual, QR codes, Biometric simulation) with instant parent notifications.
+
+### 📊 Gradebook & Assessments
+Digital recording of grades with flexible criteria and automated report card generation for real-time progress tracking.
+
+### 📋 Curriculum & Timing
+Course mapping, prerequisite management, and automated class timetabling with conflict resolution.
+
+### 💬 Multi-Portal Communication
+Dedicated secure portals for students, parents, and teachers with real-time messaging and announcement systems.
+
+### 💰 Financial Management
+Automated tuition invoicing, payment tracking, and comprehensive financial reporting dashboards.
+
+## Technical Excellence
+
+### Backend Stack
+- **Node.js & Express** with **TypeScript** for type-safe, high-performance server logic.
+- **MongoDB & Mongoose** for flexible, document-based data modeling.
+- **Redis** integration for high-speed caching and session management.
+
+### Frontend Stack
+- **React.js** with **React Query** for efficient state management and data fetching.
+- **Tailwind CSS** for a responsive, mobile-first design.
+- **PWA Capabilities** enabling offline access and a native-app feel on all devices.
+
+### Security
+- **RBAC (Role-Based Access Control)** ensuring fine-grained permission management.
+- **JWT Refresh Tokens** and secure session handling for maximum data protection.

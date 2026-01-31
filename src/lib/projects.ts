@@ -72,10 +72,10 @@ export const projects: Project[] = [
     },
     {
         id: "event-easy",
-        title: "Event Easy",
-        description: "A comprehensive event management platform with real-time ticketing, QR-code check-ins, and data analytics. Built for high-stakes events in the regional market.",
+        title: "Event Ease",
+        description: "A revolutionary MERN-stack platform designed to streamline event discovery and management with real-time updates and secure ticketing.",
         category: "Event Management",
-        techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+        techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
         metrics: [
             { label: "Lighthouse", value: "98/100" },
             { label: "Tickets Sold", value: "10k+" },
@@ -107,9 +107,9 @@ export const projects: Project[] = [
     {
         id: "warka-academy",
         title: "Warka Academy",
-        description: "LMS platform for specialized technical education. Impact-driven software focused on performance, accessibility, and empowering the next generation of engineers.",
+        description: "A comprehensive school management system designed to streamline institutional workflows, student management, and financial tracking.",
         category: "Education",
-        techStack: ["Next.js", "Supabase", "TypeScript", "Tailwind"],
+        techStack: ["MongoDB", "Express", "React", "Node.js", "TypeScript", "Redis"],
         metrics: [
             { label: "Courses", value: "50+" },
             { label: "Students", value: "2k+" },

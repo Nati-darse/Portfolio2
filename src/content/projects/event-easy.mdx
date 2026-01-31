@@ -1,11 +1,11 @@
 ---
-title: "Event Easy"
-description: "A comprehensive event management platform with real-time ticketing and analytics."
+title: "Event Ease"
+description: "A revolutionary MERN-stack platform designed to streamline event discovery and management in Ethiopia."
 date: "2025-06-15"
-techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"]
+techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"]
 metrics: [
-  { label: "Lighthouse", value: "98/100" },
-  { label: "Tickets Sold", value: "10k+" }
+  { label: "Performance", value: "High" },
+  { label: "Ticketing", value: "Secure" }
 ]
 category: "Event Management"
 links:
@@ -13,31 +13,31 @@ links:
   github: "https://github.com/natnael-darsema/event-easy"
 ---
 
-# Event Easy: Real-time Ticketing Ecosystem
+# Event Ease: All-in-One Event Discovery System
 
-## Situation
-In a rapidly growing digital economy, event organizers in East Africa faced significant challenges with manual ticketing, fraud, and lack of real-time attendee data. Existing solutions were either too expensive or lacked the local payment integrations needed.
+Welcome to **Event Ease**, a revolutionary platform designed to streamline event discovery and management. Our mission is to enhance user experiences by providing a centralized hub for discovering, organizing, and participating in events.
 
-## Task
-The objective was to build a secure, scalable, and intuitive platform that could handle thousands of concurrent transactions during high-demand event launches while providing organizers with a "command center" for their data.
+## Features
 
-## Action
-I engineered the platform using **Next.js 15** and **PostgreSQL**. Key technical implementations included:
-- **Optimistic UI**: Implemented real-time seat selection using WebSockets and optimistic updates to ensure a lag-free experience.
-- **Queue Management**: Developed a custom request queue for ticket purchases to prevent database bottleneck during peak traffic.
-- **Local Integrations**: Built adapters for diverse payment gateways used in the region.
+### 🌟 User-Friendly Interface
+Navigate effortlessly through our intuitive, modern design built for maximum engagement.
 
-## Result
-The platform successfully processed over **10,000 tickets** in its first month with zero downtime. It achieved a **98/100 Lighthouse performance score** and reduced attendee check-in time by **60%** through QR-code based automated systems.
+### 🎯 Personalized Recommendations
+Discover events tailored specifically to your interests and past interactions.
 
-```tsx
-// Example of the Optimistic Check-in Logic
-const handleCheckIn = async (ticketId: string) => {
-  setCheckins(prev => [...prev, ticketId]); // Optimistic
-  try {
-    await api.checkIn(ticketId);
-  } catch (err) {
-    setCheckins(prev => prev.filter(id => id !== ticketId)); // Rollback
-  }
-}
-```
+### ⚡ Real-Time Updates
+Stay informed with live updates on event changes, ticket availability, and schedule shifts.
+
+### 🔐 Secure Ticketing
+Enjoy peace of mind with robust security protocols and secure payment gateway integrations.
+
+### 🤝 Community Engagement
+Connect with friends and fellow attendees to share experiences and coordinate visits.
+
+## System Architecture
+
+Event Ease is built using the **MERN stack** (MongoDB, Express.js, React, Node.js), ensuring a robust, scalable, and modular architecture. This foundation allows for rapid deployment of features and high performance under load.
+
+## The Mission
+
+In today's fast-paced world, finding events that align with your interests can be a challenge. Event Ease simplifies this process, connecting attendees with everything from music festivals to professional conferences in Ethiopia and beyond.
