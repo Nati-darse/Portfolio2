@@ -33,7 +33,7 @@ export const projects: Project[] = [
         ],
         links: {
             github: "https://github.com/natnael-darsema/event-easy",
-            live: "https://event-easy.vercel.app",
+            live: "https://eventeasy-f.vercel.app/",
         },
         slug: "event-easy",
         featured: true,
@@ -50,6 +50,7 @@ export const projects: Project[] = [
         ],
         links: {
             github: "https://github.com/natnael-darsema/gebeya",
+            live: "https://gebeya-amber.vercel.app/",
         },
         slug: "gebeya",
         featured: true,
@@ -65,9 +66,57 @@ export const projects: Project[] = [
             { label: "Students", value: "2k+" },
         ],
         links: {
-            live: "https://warka.academy",
+            live: "https://warka-acadamy.vercel.app/",
         },
         slug: "warka-academy",
         featured: true,
+    },
+    {
+        id: "mesob-help-desk",
+        title: "Mesob Help Desk",
+        description: "A specialized help desk system for streamlined technical support and ticket management.",
+        category: "Full-Stack",
+        techStack: ["React", "Express", "Node.js", "PostgreSQL"],
+        metrics: [
+            { label: "Response Time", value: "< 2h" },
+            { label: "Tickets", value: "500+" },
+        ],
+        links: {
+            live: "https://mesob-help-desk.vercel.app/",
+        },
+        slug: "mesob-help-desk",
+        featured: true,
+    },
+    {
+        id: "alem-bank",
+        title: "Alem Bank Full Gospel Church",
+        description: "Digital platform for church management, community engagement, and resource sharing.",
+        category: "Full-Stack",
+        techStack: ["Next.js", "Supabase", "Tailwind CSS"],
+        metrics: [
+            { label: "Engagement", value: "40%" },
+            { label: "Members", value: "1k+" },
+        ],
+        links: {
+            live: "https://alembankfullgospelchurch.vercel.app/",
+        },
+        slug: "alem-bank",
+        featured: false,
+    },
+    {
+        id: "un-et-uog",
+        title: "UN-ET UOG Chapter",
+        description: "Official web portal for the UN-ET UOG Chapter, facilitating organizational transparency.",
+        category: "Full-Stack",
+        techStack: ["React", "Firebase", "Tailwind CSS"],
+        metrics: [
+            { label: "Traffic", value: "5k/mo" },
+            { label: "Active Users", value: "2k" },
+        ],
+        links: {
+            live: "https://un-et-uog-chapter.vercel.app/",
+        },
+        slug: "un-et-uog",
+        featured: false,
     },
 ];
