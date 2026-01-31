@@ -32,9 +32,9 @@ export function Footer() {
                     <div className="flex flex-col gap-4">
                         <span className="text-xs font-mono text-slate-500 uppercase tracking-widest">Connect</span>
                         <ul className="flex flex-col gap-2 text-sm text-slate-400">
-                            <li><a href="#" className="hover:text-emerald-400 transition-colors">GitHub</a></li>
-                            <li><a href="#" className="hover:text-emerald-400 transition-colors">Linkedin</a></li>
-                            <li><a href="#" className="hover:text-emerald-400 transition-colors">Twitter</a></li>
+                            <li><a href="https://github.com/Nati-darse" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/nathnael-darsema/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">Linkedin</a></li>
+                            <li><a href="https://x.com/nati_sha29" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">X (Twitter)</a></li>
                         </ul>
                     </div>
 
@@ -46,7 +46,7 @@ export function Footer() {
                         </div>
                         <div className="flex items-center gap-2 text-xs text-slate-500">
                             <Command className="w-3 h-3" />
-                            <span>Press Cmd+N for Command Palette</span>
+                            <span>Press Alt+K for Command Palette</span>
                         </div>
                     </div>
                 </div>

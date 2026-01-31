@@ -90,14 +90,15 @@ export const projects: Project[] = [
     {
         id: "mesob-help-desk",
         title: "Mesob Help Desk",
-        description: "A specialized help desk system for streamlined technical support and ticket management.",
+        description: "A comprehensive IT support ticket management system built for multi-tenant organizations with multi-role support and real-time features.",
         category: "Full-Stack",
-        techStack: ["React", "Express", "Node.js", "PostgreSQL"],
+        techStack: ["React 19", "Material-UI", "Node.js", "Express", "MongoDB", "Socket.IO"],
         metrics: [
-            { label: "Response Time", value: "< 2h" },
-            { label: "Tickets", value: "500+" },
+            { label: "Architecture", value: "Multi-tenant" },
+            { label: "Resolution", value: "Real-time" },
         ],
         links: {
+            github: "https://github.com/Nati-darse/Mesob-help-desk.git",
             live: "https://mesob-help-desk.vercel.app/",
         },
         slug: "mesob-help-desk",

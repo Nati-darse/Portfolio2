@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Command } from "cmdk";
-import { Search, FileText, Briefcase, Mail, Laptop, User, X } from "lucide-react";
+import { Search, FileText, Briefcase, Mail, Laptop, User, X, Github, Linkedin, Twitter, Copy, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
@@ -12,12 +12,13 @@ export function CommandPalette() {
     const [open, setOpen] = React.useState(false);
     const isMobile = useMediaQuery("(max-width: 640px)");
     const [search, setSearch] = React.useState("");
+    const [status, setStatus] = React.useState<'idle' | 'copied'>('idle');
     const router = useRouter();
 
     // Toggle with Cmd+N
     React.useEffect(() => {
         const down = (e: KeyboardEvent) => {
-            if (e.key === "n" && (e.metaKey || e.ctrlKey)) {
+            if (e.key === "k" && e.altKey) {
                 e.preventDefault();
                 setOpen((open) => !open);
             }
@@ -45,9 +46,16 @@ export function CommandPalette() {
         setOpen(true);
     };
 
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText("nathnaeldarsema29@gmail.com");
+        setStatus('copied');
+        triggerHaptic();
+        setTimeout(() => setStatus('idle'), 2000);
+    };
+
     const handleDownloadResume = () => {
         const link = document.createElement("a");
-        link.href = "/resume-placeholder.pdf"; // Update this to actual resume path later
+        link.href = "/resume.pdf"; // Update this to actual resume path later
         link.download = "Natnael_Darsema_Resume.pdf";
         document.body.appendChild(link);
         link.click();
@@ -136,7 +144,7 @@ export function CommandPalette() {
                                         onClick={() => setOpen(false)}
                                         className="p-1 rounded bg-slate-800 text-xs text-slate-400 px-2 font-mono"
                                     >
-                                        ESC
+                                        ALT+K
                                     </button>
                                 </div>
 
@@ -164,14 +172,32 @@ export function CommandPalette() {
                                         </CommandItem>
                                     </Command.Group>
 
+                                    <Command.Group heading="Connect" className="text-slate-500 text-xs font-medium px-2 py-1.5 mb-2">
+                                        <CommandItem onSelect={() => { setOpen(false); window.open("https://github.com/Nati-darse"); }}>
+                                            <Github className="w-4 h-4 mr-2" />
+                                            GitHub Profile
+                                        </CommandItem>
+                                        <CommandItem onSelect={() => { setOpen(false); window.open("https://www.linkedin.com/in/nathnael-darsema/"); }}>
+                                            <Linkedin className="w-4 h-4 mr-2" />
+                                            LinkedIn Profile
+                                        </CommandItem>
+                                        <CommandItem onSelect={() => { setOpen(false); window.open("https://x.com/nati_sha29"); }}>
+                                            <Twitter className="w-4 h-4 mr-2" />
+                                            X (Twitter)
+                                        </CommandItem>
+                                        <CommandItem onSelect={() => { setOpen(false); window.location.href = "mailto:nathnaeldarsema29@gmail.com"; }}>
+                                            <Mail className="w-4 h-4 mr-2" />
+                                            Send Email
+                                        </CommandItem>
+                                        <CommandItem onSelect={handleCopyEmail}>
+                                            {status === 'copied' ? <Check className="w-4 h-4 mr-2 text-emerald-500" /> : <Copy className="w-4 h-4 mr-2" />}
+                                            {status === 'copied' ? "Copied!" : "Copy Email Address"}
+                                        </CommandItem>
+                                    </Command.Group>
                                     <Command.Group heading="Utility" className="text-slate-500 text-xs font-medium px-2 py-1.5 mb-2">
                                         <CommandItem onSelect={() => { setOpen(false); handleDownloadResume(); }}>
                                             <FileText className="w-4 h-4 mr-2" />
                                             Download Resume
-                                        </CommandItem>
-                                        <CommandItem onSelect={() => { setOpen(false); router.push("/contact"); }}>
-                                            <Mail className="w-4 h-4 mr-2" />
-                                            Contact
                                         </CommandItem>
                                     </Command.Group>
                                 </Command.List>

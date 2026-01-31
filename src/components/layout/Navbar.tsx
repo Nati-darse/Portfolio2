@@ -13,9 +13,9 @@ export function Navbar() {
     ];
 
     const socials = [
-        { icon: Github, href: "https://github.com/natnael-darsema" },
-        { icon: Linkedin, href: "https://linkedin.com/in/natnael-darsema" },
-        { icon: Twitter, href: "https://twitter.com/natnael_dev" }, // Placeholder
+        { icon: Github, href: "https://github.com/Nati-darse" },
+        { icon: Linkedin, href: "https://www.linkedin.com/in/nathnael-darsema/" },
+        { icon: Twitter, href: "https://x.com/nati_sha29" },
     ];
 
     return (
@@ -65,7 +65,7 @@ export function Navbar() {
                     ))}
                 </div>
                 <MagneticButton
-                    onClick={() => window.open('mailto:natnael.dev@example.com')}
+                    onClick={() => window.open('mailto:nathnaeldarsema29@gmail.com')}
                     className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 border border-emerald-500/20"
                 >
                     Book a Call

@@ -64,7 +64,7 @@ export function Hero() {
                             onClick={() => {
                                 // Trigger resume download
                                 const link = document.createElement("a");
-                                link.href = "/resume-placeholder.pdf";
+                                link.href = "/resume.pdf";
                                 link.download = "Natnael_Darsema_Resume.pdf";
                                 document.body.appendChild(link);
                                 link.click();

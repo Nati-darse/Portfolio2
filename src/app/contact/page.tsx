@@ -1,30 +1,60 @@
 "use client";
 
+import * as React from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Mail, Github, Linkedin, MessageSquare, Send } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
+    const form = React.useRef<HTMLFormElement>(null);
+    const [isSending, setIsSending] = React.useState(false);
+    const [status, setStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!form.current) return;
+
+        setIsSending(true);
+        setStatus('idle');
+
+        try {
+            await emailjs.sendForm(
+                'YOUR_SERVICE_ID', // Replace with your Service ID
+                'YOUR_TEMPLATE_ID', // Replace with your Template ID
+                form.current,
+                'YOUR_PUBLIC_KEY' // Replace with your Public Key
+            );
+            setStatus('success');
+            form.current.reset();
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            setStatus('error');
+        } finally {
+            setIsSending(false);
+        }
+    };
+
     const contactMethods = [
         {
             icon: Mail,
             label: "Direct Email",
-            value: "natnael@example.com",
-            href: "mailto:natnael@example.com"
+            value: "nathnaeldarsema29@gmail.com",
+            href: "mailto:nathnaeldarsema29@gmail.com"
         },
         {
-            icon: MessageSquare,
-            label: "Consultation",
-            value: "Schedule on Calendly",
-            href: "#"
+            icon: Github,
+            label: "GitHub",
+            value: "Nati-darse",
+            href: "https://github.com/Nati-darse"
         },
         {
             icon: Linkedin,
             label: "Professional",
-            value: "/in/natnael-darsema",
-            href: "https://linkedin.com/in/natnael-darsema"
+            value: "nathnael-darsema",
+            href: "https://www.linkedin.com/in/nathnael-darsema/"
         }
     ];
 
@@ -76,28 +106,109 @@ export default function ContactPage() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1 }}
-                        className="relative hidden lg:block"
+                        className="relative"
                     >
-                        {/* Visual tech element: Circuit grid representation */}
-                        <div className="aspect-square w-full rounded-3xl bg-slate-900/50 border border-slate-800 flex items-center justify-center relative overflow-hidden">
-                            <div className="absolute inset-0 opacity-20"
+                        <div className="rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                            {/* Background decoration */}
+                            <div className="absolute inset-0 opacity-10 pointer-events-none"
                                 style={{ backgroundImage: 'radial-gradient(#10b981 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
-                            <div className="relative z-10 flex flex-col items-center gap-6 text-center p-12">
-                                <div className="w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center animate-pulse">
-                                    <Send className="w-8 h-8 text-emerald-500" />
+                            <form ref={form} onSubmit={handleSubmit} className="relative z-10 flex flex-col gap-6">
+                                <div className="space-y-4">
+                                    <h3 className="text-2xl font-bold text-slate-100 uppercase tracking-tight mb-2">Send Message</h3>
+                                    <p className="text-slate-500 text-sm mb-6">
+                                        Use the form below to reach out directly. I'll get back to you as soon as possible.
+                                    </p>
                                 </div>
-                                <h3 className="text-2xl font-bold text-slate-100 uppercase tracking-tight">System Status: Ready</h3>
-                                <p className="text-slate-500 text-sm max-w-xs">
-                                    Response time usually under 24 hours for valid professional inquiries.
-                                </p>
 
-                                <div className="mt-8">
-                                    <MagneticButton className="bg-emerald-500 text-slate-950 font-bold px-12 py-4">
-                                        Send Message
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div className="space-y-2">
+                                        <label htmlFor="user_name" className="text-xs font-mono text-slate-500 uppercase tracking-widest px-1">Name</label>
+                                        <input
+                                            type="text"
+                                            id="user_name"
+                                            name="user_name"
+                                            required
+                                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 outline-none focus:border-emerald-500/50 transition-colors"
+                                            placeholder="Your name"
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label htmlFor="user_email" className="text-xs font-mono text-slate-500 uppercase tracking-widest px-1">Email</label>
+                                        <input
+                                            type="email"
+                                            id="user_email"
+                                            name="user_email"
+                                            required
+                                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 outline-none focus:border-emerald-500/50 transition-colors"
+                                            placeholder="your@email.com"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <label htmlFor="subject" className="text-xs font-mono text-slate-500 uppercase tracking-widest px-1">Subject</label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        name="subject"
+                                        required
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 outline-none focus:border-emerald-500/50 transition-colors"
+                                        placeholder="Project Inquiry"
+                                    />
+                                </div>
+
+                                <div className="space-y-2">
+                                    <label htmlFor="message" className="text-xs font-mono text-slate-500 uppercase tracking-widest px-1">Message</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        required
+                                        rows={4}
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 outline-none focus:border-emerald-500/50 transition-colors resize-none"
+                                        placeholder="Tell me about your project..."
+                                    />
+                                </div>
+
+                                <div className="mt-4">
+                                    <MagneticButton
+                                        disabled={isSending}
+                                        type="submit"
+                                        className={`w-full font-bold px-12 py-4 flex items-center justify-center gap-2 transition-all ${isSending ? 'bg-slate-800 text-slate-500' : 'bg-emerald-500 text-slate-950 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)]'}`}
+                                    >
+                                        {isSending ? (
+                                            <>
+                                                <div className="w-5 h-5 border-2 border-slate-500 border-t-transparent rounded-full animate-spin" />
+                                                Transmitting...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-5 h-5 text-current" />
+                                                Send Message
+                                            </>
+                                        )}
                                     </MagneticButton>
                                 </div>
-                            </div>
+
+                                {status === 'success' && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-emerald-500 text-sm text-center font-medium"
+                                    >
+                                        Message sent successfully!
+                                    </motion.p>
+                                )}
+                                {status === 'error' && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-red-500 text-sm text-center font-medium"
+                                    >
+                                        Failed to send message. Please try again.
+                                    </motion.p>
+                                )}
+                            </form>
                         </div>
                     </motion.div>
                 </div>

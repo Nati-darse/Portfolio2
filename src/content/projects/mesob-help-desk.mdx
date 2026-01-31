@@ -1,31 +1,60 @@
 ---
 title: "Mesob Help Desk"
-description: "A specialized help desk system for streamlined technical support and ticket management."
+description: "A comprehensive IT support ticket management system built for multi-tenant organizations."
 date: "2025-08-20"
-techStack: ["React", "Express", "Node.js", "PostgreSQL", "Tailwind CSS"]
+techStack: ["React 19", "Material-UI", "Node.js", "Express", "MongoDB", "Socket.IO"]
 metrics: [
-  { label: "Response Time", value: "< 2h" },
-  { label: "Tickets", value: "500+" }
+  { label: "Architecture", value: "Multi-tenant" },
+  { label: "Resolution", value: "Real-time" }
 ]
 category: "Full-Stack"
 links:
+  github: "https://github.com/Nati-darse/Mesob-help-desk.git"
   live: "https://mesob-help-desk.vercel.app/"
 ---
 
-# Mesob Help Desk: Streamlining Technical Support
+# Mesob Help Desk: Comprehensive IT Support System
 
-## Situation
-Organizations often struggle with disorganized support requests coming through various channels like email, phone, and direct messages, leading to slow response times and forgotten issues.
+A robust IT support ticket management system designed for multi-tenant organizations to streamline technical support workflows and enhance communication between employees and support staff.
 
-## Task
-The goal was to create a centralized help desk platform where users could easily submit tickets, and support staff could manage, prioritize, and resolve them efficiently.
+## Features
 
-## Action
-I developed a full-stack solution with the following features:
-- **Ticket Lifecycle Management**: From submission to resolution with automated status updates.
-- **Role-Based Access Control**: Different permissions for administrators, technicians, and end-users.
-- **Reporting Dashboard**: Visual representations of ticket trends and technician performance.
-- **Email Notifications**: Automated alerts for new tickets and status changes.
+### 👥 Multi-Role Support
+- **System Admin**: Global system management and oversight.
+- **Super Admin**: Organization-wide administration.
+- **Team Lead**: Team management and ticket assignment.
+- **Technician**: Ticket resolution and field work.
+- **Employee**: Ticket creation and tracking.
 
-## Result
-The system significantly improved organizational efficiency, reducing the average ticket resolution time by **45%** and increasing user satisfaction scores.
+### 🎨 Modern UI/UX
+- Clean, responsive **Material-UI** design.
+- Role-based dashboards and navigation.
+- Real-time updates with **Socket.IO**.
+- Dark and Light mode support.
+
+### 🔧 Core Functionality
+- **Multi-tenant** ticket management.
+- Real-time notifications and status updates.
+- Advanced analytics and reporting with **Chart.js**.
+- User management and role assignment.
+- Company directory and maintenance mode controls.
+
+## Tech Stack
+
+### Frontend
+- **React 19** - Modern UI library
+- **Material-UI (MUI)** - Component library
+- **Vite** - Fast build tool
+- **Socket.IO Client** - Real-time communication
+- **Chart.js** - Data visualization
+
+### Backend
+- **Node.js & Express.js** - Server-side environment
+- **MongoDB & Mongoose** - Database and ODM
+- **Socket.IO** - Real-time communication
+- **JWT & bcryptjs** - Authentication and security
+
+## Key Highlights
+- **SLA Tracking**: Monitor resolution times and priority-based alerts.
+- **Live Notifications**: Immediate updates for new tickets and assignment changes.
+- **Performance Metrics**: Detailed insights into technician performance and ticket trends.
