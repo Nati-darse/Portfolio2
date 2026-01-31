@@ -17,10 +17,26 @@ export interface Project {
     };
     slug: string;
     featured?: boolean;
-    category: "Full-Stack" | "FinTech" | "Education" | "Event Management";
+    category: "Full-Stack" | "FinTech" | "Education" | "Event Management" | "Healthcare";
 }
 
 export const projects: Project[] = [
+    {
+        id: "atlas-hospital",
+        title: "Atlas Hospital",
+        description: "State-of-the-art medical management platform featuring secure Spring Boot backend, Angular 21 frontend, and 3D NFC card verification logic.",
+        category: "Healthcare",
+        techStack: ["Angular 21", "Spring Boot", "PostgreSQL", "Tailwind CSS", "JWT"],
+        metrics: [
+            { label: "Architecture", value: "Full-Stack" },
+            { label: "Security", value: "JWT+NFC" },
+        ],
+        links: {
+            live: "https://hospital-card-management.vercel.app/#/",
+        },
+        slug: "atlas-hospital",
+        featured: true,
+    },
     {
         id: "event-easy",
         title: "Event Easy",
