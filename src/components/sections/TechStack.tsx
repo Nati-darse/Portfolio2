@@ -15,7 +15,7 @@ import {
 const languages = [
     { name: "TypeScript", level: "Senior", icon: Code2, color: "text-blue-400" },
     { name: "JavaScript", level: "Senior", icon: Code2, color: "text-yellow-400" },
-    { name: "Go (Golang)", level: "Intermediate", icon: Terminal, color: "text-cyan-400" },
+    { name: "Go (Golang)", level: "Basics", icon: Terminal, color: "text-cyan-400" },
     { name: "Python", level: "Intermediate", icon: Terminal, color: "text-blue-500" },
     { name: "C++", level: "Intermediate", icon: Cpu, color: "text-blue-600" },
     { name: "Java", level: "Basics", icon: Coffee, color: "text-red-500" },
@@ -25,12 +25,12 @@ const categories = [
     {
         title: "Frontend Architecture",
         icon: Globe,
-        items: ["Next.js 15", "React 19", "Tailwind CSS", "Framer Motion", "Redux/Zustand"]
+        items: ["Next.js", "React", "Angular", "Tailwind CSS", "Framer Motion", "Redux/Zustand"]
     },
     {
         title: "Backend Engineering",
         icon: Database,
-        items: ["Node.js", "Express", "Go", "Prisma/Drizzle", "PostgreSQL/MongoDB"]
+        items: ["Node.js", "Express", "Spring Boot", "PHP", "Prisma/Drizzle", "PostgreSQL/MongoDB/Supabase"]
     },
     {
         title: "Mobile & Specialized",
