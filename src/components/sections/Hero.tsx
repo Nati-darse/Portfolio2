@@ -46,7 +46,7 @@ export function Hero() {
                     </h1>
 
                     <p className="max-w-xl text-lg sm:text-xl text-slate-400 mt-8 leading-relaxed">
-                        I'm <span className="text-emerald-400 font-medium">Natnael Darsema</span>. A Full-Stack Developer engineering performance-first web applications with Next.js 15, specialized in scalable architecture and tactile user interfaces.
+                        I'm <span className="text-emerald-400 font-medium">Natnael Darsema</span>. A Full-Stack Developer engineering performance-first web applications with Next.js, specialized in scalable architecture and tactile user interfaces.
                     </p>
 
                     <div className="flex flex-wrap items-center gap-4 mt-8">
