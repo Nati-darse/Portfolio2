@@ -81,7 +81,7 @@ export const projects: Project[] = [
             { label: "Tickets Sold", value: "10k+" },
         ],
         links: {
-            github: "https://github.com/natnael-darsema/event-easy",
+            github: "https://github.com/Nati-darse/event-easy",
             live: "https://eventeasy-f.vercel.app/",
         },
         slug: "event-easy",
@@ -90,15 +90,15 @@ export const projects: Project[] = [
     {
         id: "gebeya",
         title: "Gebeya",
-        description: "Multi-vendor e-commerce marketplace featuring advanced filtering, vendor dashboards, and complex state management. Orchestrating a full digital trade ecosystem.",
+        description: "Modern E-Commerce Platform for agricultural products facilitating trade between rural wholesalers and urban customers, featuring a MERN-based logistics system.",
         category: "Full-Stack",
-        techStack: ["React", "Express", "MongoDB", "Node.js", "Redux"],
+        techStack: ["React 18", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Context API", "Stripe"],
         metrics: [
             { label: "Vendors", value: "500+" },
             { label: "Users", value: "25k+" },
         ],
         links: {
-            github: "https://github.com/natnael-darsema/gebeya",
+            github: "https://github.com/Nati-darse/Gebeya",
             live: "https://gebeya-amber.vercel.app/",
         },
         slug: "gebeya",

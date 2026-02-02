@@ -1,8 +1,8 @@
 ---
 title: "Gebeya"
-description: "Multi-vendor e-commerce marketplace with advanced filtering and vendor dashboards."
+description: "Modern E-Commerce Platform for agricultural products facilitating trade between rural wholesalers and urban customers."
 date: "2024-11-20"
-techStack: ["React", "Express", "MongoDB", "Node.js", "Redux"]
+techStack: ["React 18", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Context API", "Stripe"]
 metrics: [
   { label: "Vendors", value: "500+" },
   { label: "Users", value: "25k+" }
@@ -10,32 +10,51 @@ metrics: [
 category: "Full-Stack"
 links:
   live: "https://gebeya-amber.vercel.app/"
-  github: "https://github.com/natnael-darsema/gebeya"
+  github: "https://github.com/Nati-darse/Gebeya"
 ---
 
-# Gebeya: Orchestrating a Digital Marketplace
+# Gebeya: Modern E-Commerce Platform
 
-## Situation
-Local merchants lacked a centralized platform to reach a wider audience, while consumers struggled with fragmented e-commerce options. There was a need for a robust, multi-vendor system that could manage diverse inventory and complex order flows.
+A full-featured e-commerce solution with responsive design and a seamless checkout experience, specifically designed to bridge the gap between rural wholesalers and urban customers.
 
-## Task
-The goal was to architect a full-stack marketplace that provided unified search and discovery for users, while giving vendors a powerful administrative suite to manage products, sales, and analytics.
+## ✨ Key Features
 
-## Action
-I developed the system using the **MERN** stack. Key contributions included:
-- **Unified Schema Design**: Designed a flexible MongoDB schema to handle varied product types from different categories.
-- **Vendor Dashboard**: Built a comprehensive React-based admin panel for vendors with real-time sales charts and inventory management.
-- **Advanced Filtering**: Implemented an efficient server-side filtering and pagination system to handle thousands of items with low latency.
+- 🛒 **Product Catalog**: Advanced filtering and categorization for diverse agricultural products.
+- 🔐 **User Authentication**: Secure login and signup flows for customers and vendors.
+- 💳 **Secure Payments**: Integrated with Stripe and PayPal for reliable transactions.
+- 📱 **Mobile-Optimized**: A fully responsive UI that works perfectly on all devices.
+- 📊 **Admin Dashboard**: Comprehensive inventory management and sales analytics.
+- 🚀 **Performance**: Blazing fast user experience powered by **Vite** and **React 18**.
 
-## Result
-The platform scaled to support over **500 vendors** and served **25,000+ active users**. It became a key player in the local digital commerce space, facilitating thousands of transactions monthly with a focus on ease-of-use for non-technical merchants.
+## 🛠 Tech Stack
 
-```javascript
-// Vendor Sales Analytics Aggregation
-const getVendorStats = async (vendorId) => {
-  return await Order.aggregate([
-    { $match: { "items.vendor": vendorId } },
-    { $group: { _id: null, totalSales: { $sum: "$totalAmount" } } }
-  ]);
-}
+### Frontend
+- **React 18 + Vite** - Modern library and fast build tool
+- **Tailwind CSS** - Utility-first styling
+- **React Router v6** - Client-side routing
+- **Context API** - Efficient state management
+- **Axios** - Robust API communication
+
+### Backend
+- **Node.js & Express** - Scalable server environment
+- **MongoDB & Mongoose** - Document-based database and ODM
+- **JWT Authentication** - Secure, stateless sessions
+- **Stripe/PayPal API** - Payment processing
+
+## 📂 Project Structure
+
+```text
+Gebeya/
+├── frontend/
+│   ├── src/
+│   │   ├── components/  # Reusable UI
+│   │   ├── context/     # State management
+│   │   ├── pages/       # Views
+│   │   └── App.jsx      # Root component
+├── backend/             # Server code
+└── README.md
 ```
+
+## 📜 License
+
+Distributed under the MIT License. See LICENSE for details.
