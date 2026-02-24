@@ -40,13 +40,13 @@ export function Hero() {
                         <motion.span style={{ y: y2 }} className="block">
                             DIGITAL
                         </motion.span>
-                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">
+                        <span className="block text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-emerald-600">
                             INDUSTRIAL
                         </span>
                     </h1>
 
                     <p className="max-w-xl text-lg sm:text-xl text-slate-400 mt-8 leading-relaxed">
-                        I'm <span className="text-emerald-400 font-medium">Natnael Darsema</span>. A Full-Stack Developer engineering performance-first web applications with Next.js, specialized in scalable architecture and tactile user interfaces.
+                        I'm <span className="text-emerald-400 font-medium">Natnael Darsema</span>. Full-Stack Developer & Software Quality Engineer building performance-first web applications with MERN stack and Next.js, focused on scalable architecture, reliable systems, and exceptional user experiences.
                     </p>
 
                     <div className="flex flex-wrap items-center gap-4 mt-8">
