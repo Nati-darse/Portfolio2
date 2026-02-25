@@ -52,7 +52,7 @@ export default function ContactPage() {
         },
         {
             icon: Linkedin,
-            label: "Professional",
+            label: "LinkedIn",
             value: "nathnael-darsema",
             href: "https://www.linkedin.com/in/nathnael-darsema/"
         }

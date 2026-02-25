@@ -21,7 +21,7 @@ export default function AboutPage() {
         },
         {
             year: "sep 7 2026- present ",
-            role: "Senior Software Developer",
+            role: "Senior Software Developer with 5 ⭐ Upwork Rating",
             company: "Upwork – Remote",
             description: "Built scalable full-stack applications for clients across various industries, leveraging modern frameworks and cloud technologies."
         },
