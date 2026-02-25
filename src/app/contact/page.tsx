@@ -6,11 +6,20 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Mail, Github, Linkedin, Send } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 export default function ContactPage() {
     const form = React.useRef<HTMLFormElement>(null);
     const [isSending, setIsSending] = React.useState(false);
     const [status, setStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = React.useState<string>("");
+    const isConfigured = Boolean(
+        EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY
+    );
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -18,32 +27,29 @@ export default function ContactPage() {
 
         setIsSending(true);
         setStatus('idle');
+        setErrorMessage("");
 
         try {
-            const formData = new FormData(form.current);
-            const payload = {
-                user_name: String(formData.get("user_name") || "").trim(),
-                user_email: String(formData.get("user_email") || "").trim(),
-                subject: String(formData.get("subject") || "").trim(),
-                message: String(formData.get("message") || "").trim(),
-            };
-
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(payload),
-            });
-
-            if (!response.ok) {
-                throw new Error("Failed to send message");
+            if (!isConfigured) {
+                throw new Error(
+                    "Missing NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, or NEXT_PUBLIC_EMAILJS_PUBLIC_KEY."
+                );
             }
+
+            await emailjs.sendForm(
+                EMAILJS_SERVICE_ID!,
+                EMAILJS_TEMPLATE_ID!,
+                form.current,
+                { publicKey: EMAILJS_PUBLIC_KEY! }
+            );
 
             setStatus('success');
             form.current.reset();
         } catch (error) {
             console.error('Contact form error:', error);
+            setErrorMessage(
+                error instanceof Error ? error.message : "Failed to send message."
+            );
             setStatus('error');
         } finally {
             setIsSending(false);
@@ -185,9 +191,9 @@ export default function ContactPage() {
 
                                 <div className="mt-4">
                                     <MagneticButton
-                                        disabled={isSending}
+                                        disabled={isSending || !isConfigured}
                                         type="submit"
-                                        className={`w-full font-bold px-12 py-4 flex items-center justify-center gap-2 transition-all ${isSending ? 'bg-slate-800 text-slate-500' : 'bg-emerald-500 text-slate-950 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)]'}`}
+                                        className={`w-full font-bold px-12 py-4 flex items-center justify-center gap-2 transition-all ${isSending || !isConfigured ? 'bg-slate-800 text-slate-500' : 'bg-emerald-500 text-slate-950 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)]'}`}
                                     >
                                         {isSending ? (
                                             <>
@@ -218,7 +224,7 @@ export default function ContactPage() {
                                         animate={{ opacity: 1, y: 0 }}
                                         className="text-red-500 text-sm text-center font-medium"
                                     >
-                                        Failed to send message. Please try again.
+                                        {errorMessage || "Failed to send message. Please try again."}
                                     </motion.p>
                                 )}
                             </form>
