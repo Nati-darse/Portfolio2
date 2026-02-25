@@ -8,29 +8,35 @@ import { Code2, Terminal, Cpu, Zap } from "lucide-react";
 export default function AboutPage() {
     const experiences = [
         {
-            year: "2024 - Present",
-            role: "Lead Full-Stack Engineer",
-            company: "Event Easy",
-            description: "Architecting high-performance ticketing systems and real-time dashboard analytics."
+            year: " Nov 2025 – present",
+            role: "Software Engineer and administrator",
+            company: "Addis Mesob",
+            description: "Built a software for inside work and work as administrator for 5+ LAN network Government softwares and workstations. Responsible for maintaining network security, troubleshooting connectivity issues, and ensuring seamless communication across the organization."
         },
         {
-            year: "2023 - 2024",
+            year: "July 2024– October 2024",
+            role: "Frontend Developer Intern",
+            company: "Eaglelion Technology Solutions– Addis Ababa, Ethiopia",
+            description: "Built a responsive agricultural marketplace using React.js and Tailwind CSS. Architecting high-performance ticketing systems and real-time dashboard analytics."
+        },
+        {
+            year: "sep 7 2026- present ",
             role: "Senior Software Developer",
-            company: "Gebeya",
-            description: "Built scalable multi-vendor marketplaces and merchant administrative suites."
+            company: "Upwork – Remote",
+            description: "Built scalable full-stack applications for clients across various industries, leveraging modern frameworks and cloud technologies."
         },
         {
-            year: "2022 - 2023",
-            role: "Frontend Engineer",
-            company: "Warka Academy",
-            description: "Developed impact-driven LMS platforms with a focus on accessibility and performance."
+            year: "Feb 2025– March 2025",
+            role: "Frontend Developer",
+            company: "UNET UOG Chapter – Addis Ababa, Ethiopia",
+            description: "Developed a dynamic website for the University of Gondar's UNET chapter, showcasing events, resources, and member profiles using React and Firebase."
         }
     ];
 
     const skills = [
-        { icon: Code2, label: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"] },
-        { icon: Terminal, label: "Backend", items: ["Node.js", "Express", "PostgreSQL", "Prisma", "Supabase"] },
-        { icon: Cpu, label: "Infrastructure", items: ["Vercel", "GitHub Actions", "Docker", "Edge Functions"] },
+        { icon: Code2, label: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS","Angular 21", "Framer Motion"] },
+        { icon: Terminal, label: "Backend", items: ["Node.js", "Express", "PostgreSQL", "Prisma", "Supabase", "springboot" ] }, 
+        { icon: Cpu, label: "Infrastructure", items: ["Vercel", "GitHub Actions", "Docker", "Edge Functions", "Render"] },
         { icon: Zap, label: "Performance", items: ["Lighthouse Optimization", "Core Web Vitals", "Edge Caching"] }
     ];
 
@@ -52,15 +58,15 @@ export default function AboutPage() {
                     {/* Theory / BIO */}
                     <div className="flex flex-col gap-8">
                         <h2 className="text-xs font-mono text-slate-500 uppercase tracking-widest border-b border-slate-900 pb-4">
-                            Mission Statement // 01
+                            Mission Statement || 01
                         </h2>
                         <div className="prose prose-invert prose-emerald text-slate-300">
                             <p>
-                                My philosophy as an engineer is simple: **Performance is not a feature, it's a foundation.**
+                                My philosophy as an engineer is simple: Performance is not a feature, it's a foundation.
                                 Every line of code I write is optimized for speed, clarity, and scalability.
                             </p>
                             <p>
-                                With several years of experience building specialized products in East Africa,
+                                With years of experience building specialized products in East Africa,
                                 from FinTech to EdTech, I've developed a deep understanding of creating software
                                 that works reliably across varied environments.
                             </p>
@@ -88,7 +94,7 @@ export default function AboutPage() {
                     {/* Timeline */}
                     <div className="flex flex-col gap-12">
                         <h2 className="text-xs font-mono text-slate-500 uppercase tracking-widest border-b border-slate-900 pb-4">
-                            Log // Technical History
+                            Log || Technical History
                         </h2>
                         <div className="flex flex-col gap-12">
                             {experiences.map((exp, i) => (
