@@ -4,9 +4,8 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Mail, Github, Linkedin, MessageSquare, Send } from "lucide-react";
+import { Mail, Github, Linkedin, Send } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
     const form = React.useRef<HTMLFormElement>(null);
@@ -21,16 +20,30 @@ export default function ContactPage() {
         setStatus('idle');
 
         try {
-            await emailjs.sendForm(
-                'YOUR_SERVICE_ID', // Replace with your Service ID
-                'YOUR_TEMPLATE_ID', // Replace with your Template ID
-                form.current,
-                'YOUR_PUBLIC_KEY' // Replace with your Public Key
-            );
+            const formData = new FormData(form.current);
+            const payload = {
+                user_name: String(formData.get("user_name") || "").trim(),
+                user_email: String(formData.get("user_email") || "").trim(),
+                subject: String(formData.get("subject") || "").trim(),
+                message: String(formData.get("message") || "").trim(),
+            };
+
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to send message");
+            }
+
             setStatus('success');
             form.current.reset();
         } catch (error) {
-            console.error('EmailJS Error:', error);
+            console.error('Contact form error:', error);
             setStatus('error');
         } finally {
             setIsSending(false);
@@ -41,8 +54,8 @@ export default function ContactPage() {
         {
             icon: Mail,
             label: "Direct Email",
-            value: "nathnaeldarsema29@gmail.com",
-            href: "mailto:nathnaeldarsema29@gmail.com"
+            value: "nathnaeldarsema@gmail.com",
+            href: "mailto:nathnaeldarsema@gmail.com"
         },
         {
             icon: Github,
