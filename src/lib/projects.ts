@@ -111,8 +111,8 @@ export const projects: Project[] = [
         category: "Education",
         techStack: ["MongoDB", "Express", "React", "Node.js", "TypeScript", "Redis"],
         metrics: [
-            { label: "Courses", value: "50+" },
-            { label: "Students", value: "2k+" },
+            { label: "Courses", value: " 🀄☑️" },
+            { label: "Students", value: "▶️" },
         ],
         links: {
             live: "https://warka-acadamy.vercel.app/",
