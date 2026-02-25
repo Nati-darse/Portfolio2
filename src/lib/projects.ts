@@ -77,8 +77,8 @@ export const projects: Project[] = [
         category: "Event Management",
         techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
         metrics: [
-            { label: "Lighthouse", value: "98/100" },
-            { label: "Tickets Sold", value: "10k+" },
+            { label: "Performance", value: "High" },
+            { label: "Payment", value: "Chapa integration" },
         ],
         links: {
             github: "https://github.com/Nati-darse/event-easy",
@@ -127,8 +127,8 @@ export const projects: Project[] = [
         category: "Full-Stack",
         techStack: ["Next.js", "Supabase", "Tailwind CSS"],
         metrics: [
-            { label: "Engagement", value: "40%" },
-            { label: "Members", value: "1k+" },
+            { label: "Engagement", value: "test" },
+            { label: "Members", value: "test" },
         ],
         links: {
             live: "https://alembankfullgospelchurch.vercel.app/",
@@ -143,8 +143,8 @@ export const projects: Project[] = [
         category: "Full-Stack",
         techStack: ["React", "Firebase", "Tailwind CSS"],
         metrics: [
-            { label: "Traffic", value: "5k/mo" },
-            { label: "Active Users", value: "2k" },
+            { label: "Traffic", value: "- -" },
+            { label: "Active Users", value: "-" },
         ],
         links: {
             live: "https://un-et-uog-chapter.vercel.app/",
