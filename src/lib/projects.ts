@@ -61,7 +61,7 @@ export const projects: Project[] = [
         category: "Full-Stack",
         techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Framer Motion"],
         metrics: [
-            { label: "Performance", value: "99/100" },
+            { label: "Architecture", value: "Full-Stack" },
             { label: "User Flow", value: "Seamless" },
         ],
         links: {
@@ -94,8 +94,8 @@ export const projects: Project[] = [
         category: "Full-Stack",
         techStack: ["React 18", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Context API", "Stripe"],
         metrics: [
-            { label: "Vendors", value: "500+" },
-            { label: "Users", value: "25k+" },
+            { label: "Architecture", value: "Full-Stack" },
+            { label: "Users", value: "Buyer and seller" },
         ],
         links: {
             github: "https://github.com/Nati-darse/Gebeya",
