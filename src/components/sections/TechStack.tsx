@@ -9,16 +9,24 @@ import {
     Smartphone,
     Cpu,
     Globe,
-    Zap
+    Zap,
+    TestTubeIcon,
+    Beaker,
+    LucideGlasses,
+    Kanban,
+    ShapesIcon
 } from "lucide-react";
 
 const languages = [
-    { name: "TypeScript", level: "Senior", icon: Code2, color: "text-blue-400" },
-    { name: "JavaScript", level: "Senior", icon: Code2, color: "text-yellow-400" },
+    { name: "TypeScript", level: "Intermediate", icon: Code2, color: "text-blue-400" },
+    { name: "JavaScript", level: "Intermediate", icon: Code2, color: "text-yellow-400" },
     { name: "Go (Golang)", level: "Basics", icon: Terminal, color: "text-cyan-400" },
-    { name: "Python", level: "Intermediate", icon: Terminal, color: "text-blue-500" },
-    { name: "C++", level: "Intermediate", icon: Cpu, color: "text-blue-600" },
+    { name: "Python", level: "Basics", icon: Terminal, color: "text-blue-500" },
+    { name: "Next.js", level: "Intermediate", icon: ShapesIcon, color: "text-black dark:text-white" },
     { name: "Java", level: "Basics", icon: Coffee, color: "text-red-500" },
+    {name:"playwright",level: "Basics", icon: Globe, color: "text-green-600"},
+    { name: "Jira", level: "Intermediate", icon: Kanban, color: "text-blue-500" }
+
 ];
 
 const categories = [
@@ -30,21 +38,20 @@ const categories = [
     {
         title: "Backend Engineering",
         icon: Database,
-        items: ["Node.js", "Express", "Spring Boot", "PHP", "Prisma/Drizzle", "PostgreSQL/MongoDB/Supabase"]
+        items: ["Node.js", "Express", "Spring Boot", "PHP", "PostgreSQL/MongoDB/Supabase"]
     },
     {
-        title: "Mobile & Specialized",
-        icon: Smartphone,
-        items: ["React Native", "Expo", "Firebase", "Edge Functions", "AI/ML (Basics)"]
+        title: "QA  |  Testing",
+        icon:  LucideGlasses,
+        items: ["Manual testing", "playwright", "Functional Testing","Uasbility testing", "UI/UX testing", "e2e testing"]
     },
     {
         title: "System & Infra",
         icon: Zap,
-        items: ["Docker", "Vercel", "GitHub Actions", "Google Cloud", "CI/CD Pipelines"]
+        items: ["Docker", "Vercel","Render", "GitHub Actions", "Google Cloud", "CI/CD Pipelines"]
     }
 ];
 
-// Helper to provide Coffee icon if not in lucide (it usually is though)
 import { Coffee } from "lucide-react";
 
 export function TechStack() {
@@ -53,11 +60,11 @@ export function TechStack() {
             <div className="flex flex-col gap-4 mb-16">
                 <h2 className="text-3xl sm:text-5xl font-bold text-slate-100 flex items-center gap-4">
                     <span className="text-emerald-500 font-mono text-xl">02.</span>
-                    Core Stack
+                    What i use ..
                 </h2>
                 <p className="max-w-xl text-slate-400">
                     A dynamic look at the languages and technologies I leverage to build
-                    high-performance industrial software.
+                    high-performance industrial software and testing them.
                 </p>
             </div>
 
