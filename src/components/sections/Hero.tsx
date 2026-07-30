@@ -46,7 +46,9 @@ export function Hero() {
                     </h1>
 
                     <p className="max-w-xl text-lg sm:text-xl text-slate-400 mt-8 leading-relaxed">
-                        I'm <span className="text-emerald-400 font-medium">Natnael Darsema</span>. Full-Stack Developer & Software Quality Engineer building performance-first web applications with MERN stack and Next.js, focused on scalable architecture, reliable systems, and exceptional user experiences.
+                        I'm <span className=" font-medium">Natnael Darsema</span> 
+                        <span className="text-emerald-300">  "Full-Stack Developer"  & " QA Engineer" </span>
+                        building performance-first web applications with MERN stack and Next.js, built with a strict focus on software quality engineering, end-to-end testing, and system reliability..
                     </p>
 
                     <div className="flex flex-wrap items-center gap-4 mt-8">
