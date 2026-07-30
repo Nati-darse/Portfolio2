@@ -26,12 +26,12 @@ export function ProjectGrid() {
             <div className="flex flex-col gap-4 mb-16">
                 <h2 className="text-3xl sm:text-5xl font-bold text-slate-100 flex items-center gap-4">
                     <span className="text-emerald-500 font-mono text-xl">01.</span>
-                    Selected Infrastructure
+                    Selected Projects
                 </h2>
-                <p className="max-w-xl text-slate-400">
+                {/* <p className="max-w-xl text-slate-400">
                     A collection of high-end engineering products focused on scale,
                     tactile performance, and solving complex architectural challenges.
-                </p>
+                </p> */}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
@@ -52,8 +52,7 @@ export function ProjectGrid() {
                             className="h-full"
                             header={
                                 <div className="w-full h-full bg-slate-800/50 flex items-center justify-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent" />
-                                    {/* Pseudo-code display background for industrial aesthetic */}
+                                    <div className="absolute inset-0 bg-linear-to-br from-emerald-500/10 to-transparent" />
                                     <div className="font-mono text-[10px] text-emerald-500/20 leading-none select-none opacity-50 group-hover:scale-105 transition-transform duration-700">
                                         {`
                       class ${project.title.replace(/\s+/g, '')} {
