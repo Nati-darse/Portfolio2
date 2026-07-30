@@ -17,7 +17,7 @@ export interface Project {
     };
     slug: string;
     featured?: boolean;
-    category: "Full-Stack" | "FinTech" | "Education" | "Event Management" | "Healthcare";
+    category: "Full-Stack" | "FinTech" | "Education" | "Event Management" | "Healthcare" | "Testing";
 }
 
 export const projects: Project[] = [
